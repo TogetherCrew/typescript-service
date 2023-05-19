@@ -1,9 +1,9 @@
-import express, { type Express, type Request, type Response } from 'express'
+import express, { type Express, type Request, type Response } from "express";
 
-const app: Express = express()
+const app: Express = express();
 
-app.get('/', (req: Request, res: Response) => {
-  res.send('Express + TypeScript Server')
-})
+app.get("/", (req: Request, res: Response) => {
+  res.send("Express + TypeScript Server");
+});
 
-export default app
+export default app;
