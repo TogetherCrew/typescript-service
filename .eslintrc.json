@@ -10,5 +10,6 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "rules": {}
+  "rules": {},
+  "ignorePatterns": ["coverage", "dist", "node_modules"]
 }
