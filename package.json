@@ -1,0 +1,24 @@
+{
+  "name": "typescript-service",
+  "version": "0.0.1",
+  "description": "The starting point template repository for developing typescript microservices.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TogetherCrew/typescript-service.git"
+  },
+  "keywords": [
+    "template",
+    "typescript",
+    "micro-service"
+  ],
+  "author": "cyri113",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TogetherCrew/typescript-service/issues"
+  },
+  "homepage": "https://github.com/TogetherCrew/typescript-service#readme"
+}
