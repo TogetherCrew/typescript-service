@@ -11,5 +11,5 @@
       "@/*": ["./*"]
     },
   },
-  "include": ["src/**/*", "__test__/**/*", "eslintrc.json"]
+  "include": ["./src/**/*", "./__test__/**/*", "eslintrc.json"]
 }
