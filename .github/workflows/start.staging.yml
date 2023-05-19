@@ -7,3 +7,4 @@ jobs:
     uses: TogetherCrew/operations/.github/workflows/ci.yml@main
     secrets:
       CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
