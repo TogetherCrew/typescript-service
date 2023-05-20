@@ -1,11 +1,15 @@
 FROM node:18-alpine AS base
 WORKDIR /project
 COPY . .
-RUN npm install
+RUN npm ci
 
 FROM base AS test
+RUN jest
 
-FROM base AS prod
+FROM base AS build
 RUN npm run build
-CMD npm run start
+
+FROM build AS prod
+RUN npm ci --omit=dev
+CMD ["npm", "run", "start"]
 EXPOSE 3000

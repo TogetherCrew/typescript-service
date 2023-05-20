@@ -12,5 +12,7 @@ The starting point template repository for developing TypeScript microservices. 
 The CI Pipeline uses [super-linter](https://github.com/super-linter/super-linter). You can run it locally with the following command:
 
 ```bash
-docker run -e RUN_LOCAL=true -e TYPESCRIPT_DEFAULT_STYLE=prettier -v $(pwd):/tmp/lint github/super-linter:slim-latest
+docker run -e RUN_LOCAL=true -e TYPESCRIPT_DEFAULT_STYLE=prettier -e VALIDATE_DOCKERFILE_HADOLINT=false -v $(pwd):/tmp/lint github/super-linter:slim-latest
 ```
+
+Note: We have disabled HADOLINT for now as we are getting an error: `qemu: uncaught target signal 11 (Segmentation fault) - core dumped`.
