@@ -14,7 +14,7 @@ const schema = Joi.object()
   })
   .unknown();
 
-const { value: env, error } = schema
+const { value, error } = schema
   .prefs({ errors: { label: "key" } })
   .validate(process.env);
 
@@ -22,13 +22,13 @@ if (error != null) {
   throw new Error(`Config validation error: ${error.message}`);
 }
 
-const MONGODB_URL = `mongodb://${env.MONGODB_USER}:${env.MONGODB_PASS}@${
-  env.MONGODB_HOST
-}:${env.MONGODB_PORT}/${
-  env.MONGODB_NAME !== undefined ? env.MONGODB_NAME : ""
+const MONGODB_URL = `mongodb://${value.MONGODB_USER}:${value.MONGODB_PASS}@${
+  value.MONGODB_HOST
+}:${value.MONGODB_PORT}/${
+  value.MONGODB_NAME !== undefined ? value.MONGODB_NAME : ""
 }`;
 
-export default {
-  ...env,
+export const env = {
+  ...value,
   MONGODB_URL,
 };
