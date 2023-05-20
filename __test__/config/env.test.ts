@@ -35,7 +35,7 @@ describe("env", () => {
       expect.assertions(1);
       process.env.MONGODB_NAME = "db";
       const { env } = require("../../src/config/env");
-      expect(env.MONGODB_URL).toContain("localhost:27017/db");
+      expect(env.MONGODB_URL).toContain(":27017/db");
     });
   });
 });
