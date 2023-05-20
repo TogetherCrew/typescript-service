@@ -26,3 +26,16 @@ docker compose -f docker-compose.test.yml up --exit-code-from app
 ```
 
 Note: This will create a /coverage folder where you can review the coverage details.
+
+### Development Environment
+
+You can run all the integration services using the following command:
+
+```bash
+docker compose -f docker-compose.dev.yml up
+```
+
+#### Supported Services
+
+- MongoDB
+- Redis
