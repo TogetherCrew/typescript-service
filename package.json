@@ -7,7 +7,9 @@
     "build": "npx tsc",
     "start": "node dist/index.js",
     "dev": "env-cmd nodemon ./src/index.ts",
-    "test": "jest"
+    "test": "jest",
+    "prettier": "npx prettier --write .",
+    "lint": "npx eslint ."
   },
   "repository": {
     "type": "git",
