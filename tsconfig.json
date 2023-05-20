@@ -15,6 +15,6 @@
     "./src/**/*",
     "./__test__/**/*",
     ".eslintrc.json",
-    "jest.config.js"
+    "jest.config.ts"
   ]
 }
