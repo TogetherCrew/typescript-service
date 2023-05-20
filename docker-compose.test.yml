@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  app:
+    build:
+      context: .
+      target: test
+      dockerfile: Dockerfile
+    environment:
+      - PORT=3000
+      - MONGODB_HOST=mongo
+      - MONGODB_PORT=27017
+      - MONGODB_USER=root
+      - MONGODB_PASS=pass
+      - REDIS_QUEUE_HOST=localhost
+      - REDIS_QUEUE_PORT=6379
+    volumes:
+      - ./coverage:/project/coverage
+    depends_on:
+      - redis
+      - mongo
+  redis:
+    image: "redis:alpine"
+    ports:
+      - 6379:6379
+  mongo:
+    image: "mongo"
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=pass
