@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
 import Joi from "joi";
 
 const schema = Joi.object()
@@ -21,7 +22,6 @@ if (error != null) {
   throw new Error(`Config validation error: ${error.message}`);
 }
 
-// eslint-disable-next-line @typescript-eslint/restrict-template-expressions
 const MONGODB_URL = `mongodb://${env.MONGODB_USER}:${env.MONGODB_PASS}@${
   env.MONGODB_HOST
 }:${env.MONGODB_PORT}/${
