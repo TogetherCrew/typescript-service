@@ -14,6 +14,10 @@ services:
       - MONGODB_PASS=pass
       - REDIS_QUEUE_HOST=redis
       - REDIS_QUEUE_PORT=6379
+      - RABBITMQ_HOST=localhost
+      - RABBITMQ_PORT=5672
+      - RABBITMQ_USER=root
+      - RABBITMQ_PASS=pass
     volumes:
       - ./coverage:/project/coverage
     depends_on:
@@ -26,3 +30,8 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=pass
+  rabbitmq:
+    image: "rabbitmq:3-management-alpine"
+    environment:
+      - RABBITMQ_DEFAULT_USER=root
+      - RABBITMQ_DEFAULT_PASS=pass

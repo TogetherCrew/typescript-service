@@ -39,3 +39,9 @@ docker compose -f docker-compose.dev.yml up
 
 - MongoDB ([mongoose](https://mongoosejs.com/))
 - Redis ([BullMQ](https://bullmq.io/) and [bull-board](https://github.com/felixmosh/bull-board))
+- RabbitMQ ([RabbitMQ](https://www.rabbitmq.com/) and [RabbitMQ Management](https://www.rabbitmq.com/managment))
+
+#### Local Resources
+
+- [Bull Board](http://localhost:3000/admin/queues)
+- [RabbitMQ Management](http://localhost:15672)
