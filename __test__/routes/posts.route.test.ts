@@ -3,6 +3,7 @@ import app from "../../src/app";
 import mongoose from "mongoose";
 import Post from "../../src/models/post.model";
 import { env } from "../../src/config";
+import { emailQueue, imageProcessingQueue } from "../../src/queues";
 
 beforeEach(async () => {
   mongoose.set("strictQuery", true);
@@ -15,6 +16,12 @@ afterEach(async () => {
 });
 
 describe("/posts routes", () => {
+
+  afterAll(async () => {
+    await emailQueue.close()
+    await imageProcessingQueue.close()
+  })
+
   test("GET /posts", async () => {
     const post = await Post.create({
       title: "Post 1",

@@ -3,6 +3,12 @@ import imageProcessingQueue from "../../src/queues/imageProcessing.queue";
 import queueByName from "../../src/queues/queueByName";
 
 describe("queueByName", () => {
+
+  afterAll(async () => {
+    await emailQueue.close()
+    await imageProcessingQueue.close()
+  })
+
   it("should return emailQueue for name 'email'", () => {
     expect(queueByName("email")).toBe(emailQueue);
   });
