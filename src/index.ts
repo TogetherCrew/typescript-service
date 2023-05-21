@@ -10,7 +10,7 @@ main().catch((err) => {
   console.error(err);
 });
 
-async function main(): Promise<void> {
+export async function main(): Promise<void> {
   await mongoose.connect(env.MONGODB_URL);
   app.listen(env.PORT, () => {
     console.log(
