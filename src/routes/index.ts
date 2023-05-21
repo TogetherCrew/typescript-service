@@ -7,6 +7,6 @@ const router = express.Router();
 
 router.use("/jobs", jobsRoute);
 router.use("/posts", postsRoute);
-router.use("/admin/queues", serverAdapter.getRouter())
+router.use("/admin/queues", serverAdapter.getRouter());
 
 export default router;
