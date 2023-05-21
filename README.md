@@ -37,5 +37,5 @@ docker compose -f docker-compose.dev.yml up
 
 #### Supported Services
 
-- MongoDB
-- Redis
+- MongoDB ([mongoose](https://mongoosejs.com/))
+- Redis ([BullMQ](https://bullmq.io/) and [bull-board](https://github.com/felixmosh/bull-board))
