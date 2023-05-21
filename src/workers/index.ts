@@ -1,7 +1,4 @@
-import emailWorker from './email.worker'
-import imageProcessingWorker from './imageProcessing.worker'
+import emailWorker from "./email.worker";
+import imageProcessingWorker from "./imageProcessing.worker";
 
-export {
-  emailWorker,
-  imageProcessingWorker
-}
+export { emailWorker, imageProcessingWorker };

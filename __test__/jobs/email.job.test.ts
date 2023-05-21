@@ -1,13 +1,13 @@
-import { type Job } from 'bullmq';
-import emailJob from '../../src/jobs/email.job';
+import { type Job } from "bullmq";
+import emailJob from "../../src/jobs/email.job";
 
-describe('emailJob', () => {
+describe("emailJob", () => {
   let consoleLogSpy: jest.SpyInstance;
   let consoleErrorSpy: jest.SpyInstance;
 
   beforeEach(() => {
-    consoleLogSpy = jest.spyOn(console, 'log');
-    consoleErrorSpy = jest.spyOn(console, 'error');
+    consoleLogSpy = jest.spyOn(console, "log");
+    consoleErrorSpy = jest.spyOn(console, "error");
   });
 
   afterEach(() => {
@@ -15,25 +15,26 @@ describe('emailJob', () => {
     consoleErrorSpy.mockRestore();
   });
 
-  it('should process email job successfully', async () => {
+  it("should process email job successfully", async () => {
     const jobData = {
-      to: 'example@example.com',
-      subject: 'Test Subject',
-      body: 'Test Body',
+      to: "example@example.com",
+      subject: "Test Subject",
+      body: "Test Body",
     };
 
     const job: Partial<Job> = {
-      id: 'jobId',
+      id: "jobId",
       data: jobData,
-      name: 'emailJob',
+      name: "emailJob",
     };
 
     await emailJob(job as Job);
 
-    expect(consoleLogSpy).toHaveBeenCalledWith(`Sending email to ${jobData.to}: ${jobData.subject}`);
-    expect(consoleLogSpy).toHaveBeenCalledWith('Body:', jobData.body);
-    expect(consoleLogSpy).toHaveBeenCalledWith('Email sent successfully');
+    expect(consoleLogSpy).toHaveBeenCalledWith(
+      `Sending email to ${jobData.to}: ${jobData.subject}`
+    );
+    expect(consoleLogSpy).toHaveBeenCalledWith("Body:", jobData.body);
+    expect(consoleLogSpy).toHaveBeenCalledWith("Email sent successfully");
     expect(consoleErrorSpy).not.toHaveBeenCalled();
   });
-
 });

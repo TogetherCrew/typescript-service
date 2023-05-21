@@ -7,11 +7,11 @@ const getJob = async function (req: Request, res: Response) {
   try {
     const { type, jobId } = req.params; // Assuming the jobId is passed as a route parameter
 
-    let queue: Queue
+    let queue: Queue;
     try {
-      queue = queueByName(type)
+      queue = queueByName(type);
     } catch (error) {
-      console.error('Error getting job queue:', error)
+      console.error("Error getting job queue:", error);
       return res.status(400).json({ error });
     }
 
@@ -19,7 +19,7 @@ const getJob = async function (req: Request, res: Response) {
     const job = await Job.fromId(queue, jobId);
 
     if (job == null) {
-      return res.status(404).json({ error: 'Job not found' });
+      return res.status(404).json({ error: "Job not found" });
     }
 
     return res.json({
@@ -30,9 +30,9 @@ const getJob = async function (req: Request, res: Response) {
       data: job.data,
     });
   } catch (error) {
-    console.error('Error getting job status:', error);
-    return res.status(500).json({ error: 'Failed to get job status' });
+    console.error("Error getting job status:", error);
+    return res.status(500).json({ error: "Failed to get job status" });
   }
-}
+};
 
-export default getJob
+export default getJob;

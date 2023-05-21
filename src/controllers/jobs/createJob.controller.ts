@@ -7,11 +7,11 @@ const createJob = async function (req: Request, res: Response) {
   try {
     const { type, data } = req.body; // Assuming you send the job type and data in the request body
 
-    let queue: Queue
+    let queue: Queue;
     try {
-      queue = queueByName(type)
+      queue = queueByName(type);
     } catch (error) {
-      console.error(error)
+      console.error(error);
       return res.status(400).json({ error });
     }
 
@@ -19,9 +19,9 @@ const createJob = async function (req: Request, res: Response) {
 
     return res.json({ jobId: job.id });
   } catch (error) {
-    console.error('Error creating job:', error);
-    return res.status(500).json({ error: 'Failed to create job' });
+    console.error("Error creating job:", error);
+    return res.status(500).json({ error: "Failed to create job" });
   }
-}
+};
 
-export default createJob
+export default createJob;

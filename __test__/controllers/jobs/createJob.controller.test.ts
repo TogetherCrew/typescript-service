@@ -4,7 +4,7 @@ import { type Queue } from "bullmq";
 import { queueByName } from "../../../src/queues";
 import createJob from "../../../src/controllers/jobs/createJob.controller";
 
-console.error = jest.fn()
+console.error = jest.fn();
 
 // Mock the queueByName function
 jest.mock("../../../src/queues", () => ({

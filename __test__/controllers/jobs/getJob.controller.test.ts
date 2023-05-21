@@ -22,7 +22,7 @@ describe("getJob", () => {
 
   beforeEach(() => {
     req = {
-      params: {}
+      params: {},
     } as Request;
     res = {
       json: jest.fn(),
@@ -105,6 +105,8 @@ describe("getJob", () => {
     await getJob(req, res);
 
     expect(res.status).toHaveBeenCalledWith(500);
-    expect(res.json).toHaveBeenCalledWith({ error: "Failed to get job status" });
+    expect(res.json).toHaveBeenCalledWith({
+      error: "Failed to get job status",
+    });
   });
 });

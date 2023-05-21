@@ -12,11 +12,11 @@ const imageProcessingJob = async function (job: Job): Promise<void> {
     // Simulating image processing time
     await new Promise((resolve) => setTimeout(resolve, 3000));
 
-    console.log('Image processing completed');
+    console.log("Image processing completed");
   } catch (error) {
-    console.error('Error processing image:', error);
-    throw new Error('Failed to process image'); // Throw an error if image processing fails
+    console.error("Error processing image:", error);
+    throw new Error("Failed to process image"); // Throw an error if image processing fails
   }
-}
+};
 
-export default imageProcessingJob
+export default imageProcessingJob;

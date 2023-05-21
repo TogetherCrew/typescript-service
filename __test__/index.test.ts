@@ -10,7 +10,7 @@ console.log = jest.fn();
 // Mock mongoose.connect and app.listen
 jest.mock("mongoose", () => ({
   set: jest.fn(),
-  connect: jest.fn()
+  connect: jest.fn(),
 }));
 jest.mock("../src/app", () => ({
   listen: jest.fn(),
@@ -29,7 +29,7 @@ describe("main", () => {
   });
 
   it("should connect to MongoDB and start the server", async () => {
-    await expect(require("../src/index").main()).resolves.not.toThrow()
+    await expect(require("../src/index").main()).resolves.not.toThrow();
 
     expect(mongoose.set).toHaveBeenCalledWith("strictQuery", true);
     expect(mongoose.connect).toHaveBeenCalledWith("mocked-mongodb-url");
@@ -38,8 +38,8 @@ describe("main", () => {
   });
 
   it("should handle errors and log them", async () => {
-    const error = new Error("Connection failed")
-    mongoose.connect = jest.fn().mockRejectedValueOnce(error)
+    const error = new Error("Connection failed");
+    mongoose.connect = jest.fn().mockRejectedValueOnce(error);
     await expect(require("../src/index").main()).rejects.toThrow(error);
 
     expect(mongoose.connect).toHaveBeenCalledWith("mocked-mongodb-url");
