@@ -22,7 +22,7 @@ Note: We have disabled HADOLINT for now as we are getting an error: `qemu: uncau
 The CI Pipeline uses the `test` target from the Dockerfile to run the tests. You can run it locally with the following command:
 
 ```bash
-docker compose -f docker-compose.test.yml up --exit-code-from app
+docker compose -f docker-compose.test.yml up --exit-code-from app --build
 ```
 
 Note: This will create a /coverage folder where you can review the coverage details.
@@ -37,5 +37,5 @@ docker compose -f docker-compose.dev.yml up
 
 #### Supported Services
 
-- MongoDB
-- Redis
+- MongoDB ([mongoose](https://mongoosejs.com/))
+- Redis ([BullMQ](https://bullmq.io/) and [bull-board](https://github.com/felixmosh/bull-board))
