@@ -16,11 +16,10 @@ afterEach(async () => {
 });
 
 describe("/posts routes", () => {
-
   afterAll(async () => {
-    await emailQueue.close()
-    await imageProcessingQueue.close()
-  })
+    await emailQueue.close();
+    await imageProcessingQueue.close();
+  });
 
   test("GET /posts", async () => {
     const post = await Post.create({
