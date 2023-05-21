@@ -2,6 +2,7 @@
 import mongoose from "mongoose";
 import app from "./app";
 import { env } from "./config";
+import './workers'
 
 mongoose.set("strictQuery", true);
 
