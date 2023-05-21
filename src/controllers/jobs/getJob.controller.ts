@@ -11,7 +11,7 @@ const getJob = async function (req: Request, res: Response) {
     try {
       queue = queueByName(type)
     } catch (error) {
-      console.error(error)
+      console.error('Error getting job queue:', error)
       return res.status(400).json({ error });
     }
 

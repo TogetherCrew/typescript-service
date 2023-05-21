@@ -1,5 +1,5 @@
-import emailWorker from './emailWorker'
-import imageProcessingWorker from './imageProcessingWorker'
+import emailWorker from './email.worker'
+import imageProcessingWorker from './imageProcessing.worker'
 
 export {
   emailWorker,
