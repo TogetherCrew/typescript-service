@@ -39,3 +39,22 @@ docker compose -f docker-compose.dev.yml up
 
 - MongoDB ([mongoose](https://mongoosejs.com/))
 - Redis ([BullMQ](https://bullmq.io/) and [bull-board](https://github.com/felixmosh/bull-board))
+- RabbitMQ ([RabbitMQ](https://www.rabbitmq.com/) and [RabbitMQ Management](https://www.rabbitmq.com/managment))
+
+#### Local Resources
+
+- [Bull Board](http://localhost:3000/admin/queues)
+- [RabbitMQ Management](http://localhost:15672)
+
+## Commands
+
+The following commands are also available. Note that while these are made available, the `docker compose` commands are the ones called throughout the CI/CD Pipeline.
+
+```bash
+npm run prettier
+npm run lint
+npm run test
+npm run dev
+npm run build
+npm run start
+```
